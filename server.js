@@ -3,6 +3,7 @@ CSC3916 HW2
 File: Server.js
 Description: Web API scaffolding for Movie API
  */
+
 var express = require('express');
 var http = require('http');
 var bodyParser = require('body-parser');
@@ -119,7 +120,7 @@ router.route('/movies')
         res.status(405).send({ message: 'HTTP method not supported.' });
     });
 
-/*router.route('/testcollection')
+router.route('/testcollection')
     .delete(authController.isAuthenticated, (req, res) => {
         console.log(req.body);
         res = res.status(200);
@@ -139,7 +140,7 @@ router.route('/movies')
         var o = getJSONObjectForMovieRequirement(req);
         res.json(o);
     }
-    );*/
+    );
     
 app.use('/', router);
 app.listen(process.env.PORT || 8080);
